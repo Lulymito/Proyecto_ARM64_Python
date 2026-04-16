@@ -44,7 +44,7 @@ Este proyecto implementa una **librería de alto rendimiento** en ARM64 Assembly
 │ └── ops.s # Implementación ARM64 Assembly
 │
 ├── build/ # Librería compilada (.so)
-├── .gitignoreevidencias/ # Capturas de GDB y ejecución
+├── .gitignore
 ├── evidencias/ # Capturas de GDB y ejecución
 ├── Makefile # Compilación automatizada
 └── README.md # Este archivo
