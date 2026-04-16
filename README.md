@@ -1,6 +1,6 @@
 # Proyecto: Integración Python + C + ARM64 Assembly
 
-**Autor:** Lulymito  
+**Autor:** Bautsita Bautista Itzel - No.Control: 23212800  
 **Arquitectura:** ARM64 (AArch64)  
 **Plataforma:** AWS EC2 (Graviton) / Raspberry Pi OS
 
@@ -197,7 +197,7 @@ end_dot:
     ret
 ```
 ### 2. C Bridge (bridge.c)
-
+El archivo en C actúa como puente entre Python y Assembly, declarando las funciones externas implementadas en ensamblador.
 ```c
 /*
 ==========================================
@@ -287,3 +287,30 @@ python3 src/app.py
 <img width="647" height="80" alt="ejec" src="https://github.com/user-attachments/assets/13b729c4-f96e-495b-bb8d-ff5fee2cd2a4" />
 <img width="789" height="436" alt="Captura de pantalla 2026-04-16 035920" src="https://github.com/user-attachments/assets/687693c1-7c39-46ef-ad70-919b5259183d" />
 
+---
+## Resultados Esperados
+---
+### Python
+- Python puro	~0.01 s	1x (base)
+  
+### C
+- C (optimizado con -O3)	~0.0005 s	~20x más rápido
+  
+### Assembly
+- El código en Assembly es ~77 veces más rápido que Python equivalente
+
+El código en Assembly es ~77 veces más rápido que Python equivalente
+La suma de 100,000 elementos se completó en menos de 0.13 milisegundos
+El overhead principal está en la llamada Python → ctypes → C → ASM
+Para operaciones simples, el costo de llamada puede dominar; para loops grandes, Assembly brilla
+
+## Resultados obtenidos en este proyecto
+- ASM sum: 4,999,950,000
+- Tiempo: 0.00012922286987304688 segundos
+## Conclusiones
+Los registros x0-x7 para argumentos y x0 para retorno facilitan la integración. Las instrucciones condicionales (csel, cinc) evitan branches y mejoran el pipeline. La integración Python-C-Assembly es viable y práctica ctypes permite llamar código de bajo nivel sin modificar Python.
+
+El bridge en C es mínimo pero esencial para manejar tipos
+
+## Autorreflexión
+Este proyecto permitió comprender la interacción entre diferentes niveles de programación y cómo el control a bajo nivel impacta directamente en el rendimiento. En general mis conocimientos y entendimientos de GDB ya que lo que comprendi si es superficial, hace un dia no pasaba de entender algo completamente distinto a lo que era.
