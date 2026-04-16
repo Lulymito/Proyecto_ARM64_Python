@@ -314,3 +314,5 @@ El bridge en C es mínimo pero esencial para manejar tipos
 
 ## Autorreflexión
 Este proyecto permitió comprender la interacción entre diferentes niveles de programación y cómo el control a bajo nivel impacta directamente en el rendimiento. En general mis conocimientos y entendimientos de GDB ya que lo que comprendi si es superficial, hace un dia no pasaba de entender algo completamente distinto a lo que era.
+
+[![asciicast](https://asciinema.org/a/7nYrdkOoqG98Mzpl.svg)](https://asciinema.org/a/7nYrdkOoqG98Mzpl)
