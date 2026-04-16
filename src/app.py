@@ -2,7 +2,7 @@ import ctypes
 import time
 import random
 
-lib = ctypes.CDLL("./build/libops.so")
+lib = ctypes.CDLL("build/libops.so")
 
 # Configuración de tipos
 lib.sum.argtypes = [ctypes.c_int, ctypes.c_int]
