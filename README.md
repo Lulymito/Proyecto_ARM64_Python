@@ -35,3 +35,16 @@ Este proyecto implementa una **librería de alto rendimiento** en ARM64 Assembly
 ---
 
 ## 📁 Estructura del Proyecto
+<code>
+  Proyecto_ARM64_Python/
+│
+├── src/
+│ ├── app.py # Interfaz Python + benchmarks
+│ ├── bridge.c # Wrapper C (declaraciones)
+│ └── ops.s # Implementación ARM64 Assembly
+│
+├── build/ # Librería compilada (.so)
+├── evidencias/ # Capturas de GDB y ejecución
+├── Makefile # Compilación automatizada
+└── README.md # Este archivo
+</code>
